@@ -11,4 +11,6 @@ public interface UserService {
 
     public List<UserDto> getListUser();
     public UserDto getUserById(int id);
+
+    List<UserDto> searchUserByParam(String name);
 }

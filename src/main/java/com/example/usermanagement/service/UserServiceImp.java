@@ -29,4 +29,13 @@ public class UserServiceImp implements  UserService{
         }
         return result;
     }
+
+    @Override
+    public UserDto getUserById(int id) {
+        UserDto result = new UserDto();
+        result = UserMapper.toUserDto(users.get(id-1));
+        return result;
+    }
+
+
 }

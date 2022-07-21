@@ -6,6 +6,7 @@ import com.example.usermanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,5 +21,11 @@ public class UserController {
     public ResponseEntity<?> getAllUsers(){
         List<UserDto> users = userService.getListUser();
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/users/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable int id){
+        UserDto result = userService.getUserById(id);
+        return ResponseEntity.ok(result);
     }
 }

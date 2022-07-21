@@ -1,6 +1,6 @@
 package com.example.usermanagement.service;
 
-import com.example.usermanagement.entity.User;
+import com.example.usermanagement.model.dto.UserDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,5 +8,5 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    public List<User> getListUser();
+    public List<UserDto> getListUser();
 }

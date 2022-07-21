@@ -1,6 +1,8 @@
 package com.example.usermanagement.service;
 
 import com.example.usermanagement.entity.User;
+import com.example.usermanagement.model.dto.UserDto;
+import com.example.usermanagement.model.mapper.UserMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -18,8 +20,13 @@ public class UserServiceImp implements  UserService{
         users.add(new User(4,"Nguyen Cong E","one@gmail.com","012","img","123"));
 
     }
+
     @Override
-    public List<User> getListUser() {
-        return users;
+    public List<UserDto> getListUser() {
+        List<UserDto> result = new ArrayList<UserDto>();
+        for(User user : users){
+            result.add(UserMapper.toUserDto(user));
+        }
+        return result;
     }
 }

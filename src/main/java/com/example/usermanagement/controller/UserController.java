@@ -1,6 +1,7 @@
 package com.example.usermanagement.controller;
 
 import com.example.usermanagement.entity.User;
+import com.example.usermanagement.model.dto.UserDto;
 import com.example.usermanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class UserController {
 
     @GetMapping("/users")
     public ResponseEntity<?> getAllUsers(){
-        List<User> users = userService.getListUser();
+        List<UserDto> users = userService.getListUser();
         return ResponseEntity.ok(users);
     }
 }

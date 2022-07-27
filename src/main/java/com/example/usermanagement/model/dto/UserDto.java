@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @Component
 public class UserDto {
-    private int id;
+    private long id;
     private String name;
     private String email;
     private String phone;
